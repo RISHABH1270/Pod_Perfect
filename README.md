@@ -33,10 +33,9 @@ Prometheus ──▶ Collector ──▶ TimescaleDB ──▶ Analysis Engine �
 ## Key Features
 
 - **p99-based recommendations** — data-driven, not guesswork
-- **Read-only** — PodPerfect never touches your cluster, recommendations are applied by your team
+- **Recommendation-only** — PodPerfect analyzes your cluster and suggests improvements, your team decides what to apply
 - **Cost estimation** — see exact monthly savings (AWS, GCP, Azure)
 - **Confidence scoring** — 🟢 High / 🟡 Medium / 🔴 Low based on data availability
-- **Multi-cluster support** — manage multiple clusters from one dashboard
 - **Dashboard recommendations** — suggested `requests` and `limits` values shown clearly, your team applies them manually
 - **Self-hosted** — fully in-cluster via Helm, no data leaves your infrastructure
 
@@ -77,16 +76,6 @@ Open: `http://<EXTERNAL-IP>:3000`
 
 ---
 
-## Roadmap
-
-| Phase | Scope |
-|---|---|
-| **v0.1** | Single cluster, Prometheus, p99 analysis, recommendation table, YAML export |
-| **v0.2** | Cost estimation (AWS), apply-via-API, Slack digest, audit log |
-| **v0.3** | Multi-cluster, GCP + Azure pricing, OOMKill detection, CPU throttling analysis |
-| **v1.0** | VPA manifest export, SSO/OIDC, Helm chart, confidence scoring UI, weekly reports |
-
----
 
 ## Documentation
 
