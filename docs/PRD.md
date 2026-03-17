@@ -47,14 +47,19 @@ The goal: **data-driven rightsizing using actual 99th percentile usage — where
 - Support AWS (EKS), GCP (GKE), Azure (AKS) node pricing
 - Show per-workload: current monthly cost → projected monthly cost → **monthly savings $**
 - Aggregate savings view at cluster level
-- **"Low Hanging Fruit"** view: sort all workloads by potential savings descending
 
 ### 5. Dashboard
 - PodPerfect is recommendation-only — it analyzes your cluster and suggests improvements, your team decides what to apply
 - Recommended `requests` and `limits` values are displayed clearly on the dashboard
 - Your team reviews the suggestions and applies them manually to their manifests
 
-### 6. Savings Unlocked ✨
+### 6. Recommendation Summary
+- Dashboard shows a quick count of recommendations by status:
+  - 🟡 **Open** — pending review
+  - 🟢 **Accepted** — team has acknowledged and will apply
+  - ✅ **Done** — team has applied the changes
+
+### 7. Savings Unlocked ✨
 - Hero metric on the main dashboard — shows **total cost saved so far**
 - Calculated by summing `projected_monthly_savings_usd` of all recommendations marked as `done`
 - Designed to motivate teams — the more recommendations actioned, the higher the number grows

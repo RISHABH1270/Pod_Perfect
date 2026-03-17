@@ -9,6 +9,7 @@
 | Method | Endpoint | Description |
 |---|---|---|
 | `GET` | `/recommendations` | List all recommendations |
+| `GET` | `/recommendations/summary` | Count of recommendations by status |
 | `GET` | `/recommendations/:id` | Get a single recommendation |
 | `POST` | `/recommendations/:id/accept` | Mark recommendation as accepted |
 | `POST` | `/recommendations/:id/decline` | Mark recommendation as declined |
@@ -49,6 +50,20 @@
     "status": "open"  // open | accepted 🟢 | declined 🔴 | done ✅
   }
 ]
+```
+
+---
+
+### `GET /recommendations/summary`
+
+**Response**
+```json
+{
+  "open": 18,
+  "accepted": 5,
+  "declined": 2,
+  "done": 24
+}
 ```
 
 ---

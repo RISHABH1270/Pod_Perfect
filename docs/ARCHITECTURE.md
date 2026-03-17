@@ -19,28 +19,28 @@
 ## Deployment Diagram
 
 ```
-┌─────────────────────────────────────────────────┐
-│                  User's K8s Cluster              │
-│                                                   │
+┌──────────────────────────────────────────────────┐
+│                 User's K8s Cluster               │
+│                                                  │
 │   ┌──────────────┐     ┌────────────────────┐    │
 │   │  PodPerfect  │────▶│    Prometheus      │    │
-│   │  Collector   │     │  (existing)        │    │
+│   │  Collector   │     │    (existing)      │    │
 │   └──────┬───────┘     └────────────────────┘    │
-│          │                                        │
-│          ▼                                        │
+│          │                                       │
+│          ▼                                       │
 │   ┌──────────────┐     ┌────────────────────┐    │
 │   │  TimescaleDB │     │   Redis Cache      │    │
 │   └──────┬───────┘     └────────────────────┘    │
-│          │                                        │
+│          │                                       │
 │   ┌──────▼───────┐                               │
 │   │  PodPerfect  │◀──── K8s API (read-only)      │
 │   │  API (Go)    │                               │
 │   └──────┬───────┘                               │
-│          │                                        │
+│          │                                       │
 │   ┌──────▼───────┐                               │
 │   │  Next.js UI  │◀──── Browser                  │
 │   └──────────────┘                               │
-└─────────────────────────────────────────────────┘
+└──────────────────────────────────────────────────┘
 ```
 
 All components run inside the user's cluster via a single `helm install` — **no metrics leave their infrastructure.**

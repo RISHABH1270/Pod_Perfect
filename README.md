@@ -1,6 +1,6 @@
 # PodPerfect
 
-> Stop guessing. Start rightsizing.
+<h3><span style="color:#00b894">Stop guessing.</span> <span style="color:#0984e3">Start rightsizing.</span></h3>
 
 PodPerfect is an open-source, self-hosted Kubernetes resource optimizer. It analyzes historical CPU and memory usage at the **99th percentile** and recommends precise `requests` and `limits` — cutting cluster costs without sacrificing stability.
 
